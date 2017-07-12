@@ -3,7 +3,6 @@
  */
 package com.aces.learn.java8;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -14,26 +13,19 @@ import java.util.ArrayList;
  * @author aagarwal
  *
  */
-public class StateService {
+public class StateServiceJava8 {
 	/**
 	 * 
 	 * @param args
 	 */
 	public static void main(String... args){	
-		StateService stateService = new StateService();		
+		StateServiceJava8 stateService = new StateServiceJava8();		
 				
 		System.out.println("----------All States-----------");
 		List<State> states = stateService.getAllStates();			
 		System.out.println(states);
 		System.out.println("--------------------------------------------------------------------------------------------------------------");
-		
-		
-		System.out.println("----------All East Coast States Java 7-----------");
-		List<State> statesOnEastCoastJava7 = stateService.getStatesOnEastCoastJava7(states);	
-		System.out.println(statesOnEastCoastJava7);
-		System.out.println("--------------------------------------------------------------------------------------------------------------");
-		
-		
+	
 		System.out.println("----------All East Coast States Java 8-----------");
 		List<State> statesOnEastCoastJava8 = stateService.filter(states, State::isEastCoast);
 		System.out.println(statesOnEastCoastJava8);
@@ -61,31 +53,7 @@ public class StateService {
 		System.out.println("--------------------------------------------------------------------------------------------------------------");
 		
 		
-		
-		System.out.println("----------Sort States By Name Java 7-----------");
-		Collections.sort(states, new Comparator<State>(){
-			@Override
-			public int compare(State o1, State o2) {				
-				return o1.getName().compareTo(o2.getName());
-			}			
-		});		
-		System.out.println(states);
-		System.out.println("--------------------------------------------------------------------------------------------------------------");
-		
-		
-		
-		System.out.println("----------Sort States By No Of Counties Java 7-----------");
-		Collections.sort(states, new Comparator<State>(){
-			@Override
-			public int compare(State o1, State o2) {				
-				return o1.getCounties().compareTo(o2.getCounties());
-			}			
-		});		
-		System.out.println(states);
-		System.out.println("--------------------------------------------------------------------------------------------------------------");
-		
-		
-		
+	
 		System.out.println("----------Sort States By Name Java 8----1-------");
 		Collections.sort(states, (State a, State b) -> a.getName().compareTo(b.getName()));
 		System.out.println(states);
@@ -112,22 +80,7 @@ public class StateService {
 		System.out.println(states);
 		System.out.println("--------------------------------------------------------------------------------------------------------------");
 		
-		
-		
 	}	
-	/**
-	 * 
-	 * @return
-	 */
-	public List<State> getStatesOnEastCoastJava7(List<State> states){
-		List<State> statesOnEastCoast = new ArrayList<>();	
-		for(State state: states){
-			if(state.isEastCoast()){
-				statesOnEastCoast.add(state);
-			}
-		}
-		return statesOnEastCoast;
-	}
 	/**
 	 * 
 	 * @return
