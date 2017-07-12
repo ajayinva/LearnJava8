@@ -24,13 +24,13 @@ public class StateServiceJava7 {
 		System.out.println("--------------------------------------------------------------------------------------------------------------");
 		
 		
-		System.out.println("----------All East Coast States Java 7-----------");
-		List<State> statesOnEastCoastJava7 = stateService.getStatesOnEastCoastJava7(states);	
-		System.out.println(statesOnEastCoastJava7);
+		System.out.println("----------All East Coast States-----------");
+		List<State> statesOnEastCoast= stateService.getStatesOnEastCoast(states);	
+		System.out.println(statesOnEastCoast);
 		System.out.println("--------------------------------------------------------------------------------------------------------------");
 				
 		
-		System.out.println("----------Sort States By Name Java 7-----------");
+		System.out.println("----------Sort States By Name-----------");
 		Collections.sort(states, new Comparator<State>(){
 			@Override
 			public int compare(State o1, State o2) {				
@@ -42,7 +42,7 @@ public class StateServiceJava7 {
 		
 		
 		
-		System.out.println("----------Sort States By No Of Counties Java 7-----------");
+		System.out.println("----------Sort States By No Of Counties-----------");
 		Collections.sort(states, new Comparator<State>(){
 			@Override
 			public int compare(State o1, State o2) {				
@@ -56,7 +56,7 @@ public class StateServiceJava7 {
 	 * 
 	 * @return
 	 */
-	public List<State> getStatesOnEastCoastJava7(List<State> states){
+	public List<State> getStatesOnEastCoast(List<State> states){
 		List<State> statesOnEastCoast = new ArrayList<>();	
 		for(State state: states){
 			if(state.isEastCoast()){
