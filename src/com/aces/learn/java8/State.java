@@ -8,6 +8,7 @@ package com.aces.learn.java8;
  *
  */
 public class State {
+	private String code;
 	private String name;
 	private Integer counties;
 	private boolean eastCoast;
@@ -18,7 +19,8 @@ public class State {
 	/**
 	 * 
 	 */
-	public State(String name, Integer counties, boolean eastCoast){
+	public State(String code, String name, Integer counties, boolean eastCoast){
+		this.code = code;
 		this.name = name;
 		this.counties = counties;
 		this.eastCoast = eastCoast;
@@ -64,5 +66,17 @@ public class State {
 	 */
 	public String toString(){
 		return "\nState -> {Name:"+this.name+", No Of Counties:"+this.counties+", East Coase:"+this.eastCoast+"}";
+	}
+	/**
+	 * @return the code
+	 */
+	public String getCode() {
+		return code;
+	}
+	/**
+	 * @param code the code to set
+	 */
+	public void setCode(String code) {
+		this.code = code;
 	}
 }
