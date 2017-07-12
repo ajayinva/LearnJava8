@@ -80,6 +80,19 @@ public class StateServiceJava8 {
 		System.out.println(states);
 		System.out.println("--------------------------------------------------------------------------------------------------------------");
 		
+		System.out.println("----------Functional Interface-------");
+		Runnable r = () -> {
+			System.out.println("Runnable is a Functional Interface and can be passed as Lamda Function. A Functional Interface is somethign with a single abstract method");
+			System.out.println("A Lambda can be assigned to a variable");
+			System.out.println("This is an example of multiple statements in a Lambda Function");
+		};
+		Thread t1 = new Thread(r);
+		t1.start();
+		System.out.println("--------------------------------------------------------------------------------------------------------------");
+		System.out.println("----------Another Functional Interface-------");		
+		Thread t2 = new Thread(() -> System.out.println("Runnable is a Functional Interface and can be passed as Lamda Function"));
+		t2.start();
+		System.out.println("--------------------------------------------------------------------------------------------------------------");
 	}	
 	/**
 	 * 
@@ -96,6 +109,4 @@ public class StateServiceJava8 {
         }
         return result;
     }       
-
-
 }
