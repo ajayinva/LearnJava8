@@ -50,7 +50,7 @@ public class StateService {
 	 * @param p
 	 * @return
 	 */
-	public List<State> filterStates(List<State> states, Predicate<State> p){
+	public List<State> filter(List<State> states, Predicate<State> p){
         List<State> result = new ArrayList<>();
         for(State state : states){
             if(p.test(state)){
