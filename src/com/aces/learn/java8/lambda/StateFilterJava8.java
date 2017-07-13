@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.aces.learn.java8;
+package com.aces.learn.java8.lambda;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;

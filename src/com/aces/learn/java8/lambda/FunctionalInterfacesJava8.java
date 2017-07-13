@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.aces.learn.java8;
+package com.aces.learn.java8.lambda;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -30,10 +30,10 @@ public class FunctionalInterfacesJava8 {
 				}
 			}
 		);	
-		System.out.println("----------------------------Custom Functional Interface with Lambda--------------------------------");
+		System.out.println("----------------------------Custom Functional Interface with Lambda-------------------------");
 		service.print1(states, (s)->s.getCode());		
 		
-		System.out.println("-------------------------------------Consumer Functional Interface----------------------------------------------");
+		System.out.println("----------------------------Consumer Functional Interface----------------_------------------");
 		service.print2(states, (s)->System.out.println(s.getCode()));
 		
 		System.out.println("----------------------------'Function' Interface with Lambda--------------------------------");
@@ -67,7 +67,7 @@ public class FunctionalInterfacesJava8 {
 	 */
 	public void print3(List<State> states, Function<State, Integer> func){
         for(State state : states){
-        	System.out.println("# of Counties in:"+state.getCode()+" "+func.apply(state));
+        	System.out.println(func.apply(state));
         }        
     }   
 }

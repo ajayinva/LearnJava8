@@ -1,7 +1,4 @@
-/**
- * 
- */
-package com.aces.learn.java8;
+package com.aces.learn.java8.lambda;
 import static java.util.Comparator.comparing;
 
 import java.util.Collections;
