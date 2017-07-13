@@ -4,6 +4,7 @@
 package com.aces.learn.java8;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 /**
  * @author aagarwal
  *
@@ -13,23 +14,41 @@ public class FunctionalInterfacesJava8 {
 	 * 
 	 * @param args
 	 */
-	public static void main(String... args){	
-		FunctionalInterfacesJava8 service = new FunctionalInterfacesJava8();											
-		System.out.println("----------Functional Interface-------");
-		Runnable r = () -> {
-			System.out.println("Runnable is a Functional Interface and can be passed as Lamda Function. A Functional Interface is an interface with a single abstract method");
-			System.out.println("A Lambda can be assigned to a variable");
-			System.out.println("This is an example of multiple statements in a Lambda Function");
-		};
-		Thread t1 = new Thread(r);
-		t1.start();		
-		System.out.println("--------------------------------------------------------------------------------------------------------------");
+	public static void main(String... args){														
+		System.out.println("----------Functional Interface-------");	
+		System.out.println("----------------A Functional Interface is an interface with a single abstract method---------------------");		
 		
+		FunctionalInterfacesJava8 service = new FunctionalInterfacesJava8();
 		List<State> states = LearnJava8Utils.getAllStates();		
-		service.print1(states, new StateNamePrinter());		
+		System.out.println("-------------------------------------Custom Functional Interface with anonymous inner class----------------------------------------------");
+		service.print1(
+			states
+		, 	new TestFunctionalInterface<State, String> (){
+				@Override
+				public String test(State t) {
+					return t.getName();
+				}
+			}
+		);	
+		System.out.println("----------------------------Custom Functional Interface with Lambda--------------------------------");
 		service.print1(states, (s)->s.getCode());		
+		
+		System.out.println("-------------------------------------Consumer Functional Interface----------------------------------------------");
 		service.print2(states, (s)->System.out.println(s.getCode()));
+		
+		System.out.println("----------------------------'Function' Interface with Lambda--------------------------------");
+		service.print3(states, (s)->s.getCounties());		
 	}	
+	/**
+	 * 
+	 * @param states
+	 * @param tfi
+	 */
+	public void print1(List<State> states, TestFunctionalInterface<State, String> tfi){
+        for(State state : states){
+        	System.out.println(tfi.test(state));
+        }        
+    }   
 	/**
 	 * 
 	 * @param states
@@ -37,23 +56,18 @@ public class FunctionalInterfacesJava8 {
 	 * @return
 	 */
 	public void print2(List<State> states, Consumer<State> s){
-		System.out.println("-------------------------------------Consumer Functional Interface----------------------------------------------");
-		System.out.println("--------------------------------------------------------------------------------------------------------------");
         for(State state : states){
         	s.accept(state);
         }        
-    }   
+    }
 	/**
 	 * 
 	 * @param states
-	 * @param Predicate is a Functional Interface. It takes 'State' as an Input and returns a boolean
-	 * @return
+	 * @param func
 	 */
-	public void print1(List<State> states, TestFunctionalInterface<State, String> tfi){
-		System.out.println("-------------------------------------Custom Functional Interface----------------------------------------------");
-		System.out.println("--------------------------------------------------------------------------------------------------------------");
+	public void print3(List<State> states, Function<State, Integer> func){
         for(State state : states){
-        	System.out.println(tfi.test(state));
+        	System.out.println("# of Counties in:"+state.getCode()+" "+func.apply(state));
         }        
-    }     
+    }   
 }
