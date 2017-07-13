@@ -1,4 +1,4 @@
-package com.aces.learn.java8.lambda;
+package com.aces.learn.java8;
 
 /**
  * @author aagarwal

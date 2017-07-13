@@ -5,6 +5,8 @@ package com.aces.learn.java8.lambda;
 
 import java.util.function.Predicate;
 
+import com.aces.learn.java8.State;
+
 /**
  * @author aagarwal
  *

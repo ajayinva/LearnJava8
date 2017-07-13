@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.aces.learn.java8.lambda;
+package com.aces.learn.java8;
 
 import java.util.ArrayList;
 import java.util.List;
