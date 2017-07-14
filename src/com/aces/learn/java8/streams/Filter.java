@@ -24,5 +24,11 @@ public class Filter {
 		System.out.println("--------------------------------Filter All US East Coast States use Method Reference--------------------------------------");
 		List<State> eastCoastStatesWithMethodRef = states.stream().filter(State::isEastCoast).collect(toList());
 		System.out.println(eastCoastStatesWithMethodRef);
+		
+		System.out.println("--------------------------------Filter All US East Coast States with more than 100 Counties--------------------------------------");
+		List<State> eastCoastStatesWithMoreThan100Counties = states.stream()
+																   .filter(s-> (s.isEastCoast() && s.getCounties() > 100))
+																   .collect(toList());
+		System.out.println(eastCoastStatesWithMoreThan100Counties);
 	}
 }

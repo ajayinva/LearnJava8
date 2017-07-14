@@ -9,6 +9,7 @@ public class State {
 	private String name;
 	private Integer counties;
 	private boolean eastCoast;
+	private LOCATION location;
 	
 	public State(){
 		
@@ -16,11 +17,12 @@ public class State {
 	/**
 	 * 
 	 */
-	public State(String code, String name, Integer counties, boolean eastCoast){
+	public State(String code, String name, Integer counties, boolean eastCoast, State.LOCATION location){
 		this.code = code;
 		this.name = name;
 		this.counties = counties;
 		this.eastCoast = eastCoast;
+		this.location = location;
 	}
 	/**
 	 * @return the name
@@ -76,4 +78,22 @@ public class State {
 	public void setCode(String code) {
 		this.code = code;
 	}
+	/**
+	 * @return the location
+	 */
+	public LOCATION getLocation() {
+		return location;
+	}
+	/**
+	 * @param location the location to set
+	 */
+	public void setLocation(LOCATION location) {
+		this.location = location;
+	}
+	/**
+	 * 
+	 * @author aagarwal
+	 *
+	 */
+	public enum LOCATION { EAST, WEST, NORTH, SOUTH , CENTRAL }
 }
