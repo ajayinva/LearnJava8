@@ -22,7 +22,7 @@ public class ForEach {
 		System.out.println("--------------------------------Print All State Code using Lambda--------------------------------------");
 		states.stream().forEach(s-> System.out.println(s.getCode()));
 		
-		System.out.println("--------------------------------Process all states using mupltiple statements in Lambda--------------------------------------");
+		System.out.println("--------------------------------Process all states using multiple statements in Lambda--------------------------------------");
 		states.stream().forEach(s-> {
 			String name = s.getName();
 			String code = s.getCode();

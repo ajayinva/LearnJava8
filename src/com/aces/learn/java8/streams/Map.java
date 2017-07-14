@@ -6,6 +6,8 @@ package com.aces.learn.java8.streams;
 import java.util.List;
 import static java.util.stream.Collectors.toList;
 
+import java.util.Arrays;
+
 import com.aces.learn.java8.LearnJava8Utils;
 import com.aces.learn.java8.State;
 
@@ -36,5 +38,10 @@ public class Map {
 										.map(State::getCode)
 										.collect(toList());
 		System.out.println(allStateCodes);
+		
+		System.out.println("--------------------------------List of Numbers converted to a list of sqaures of each number--------------------------------------");
+		List<Integer> numbers = Arrays.asList(1,2,3,4,5);
+		List<Integer> squares = numbers.stream().map(n->n*n).collect(toList());  
+		System.out.println("Squares::"+squares);
 	}
 }
