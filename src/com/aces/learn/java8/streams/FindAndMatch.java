@@ -4,6 +4,8 @@
 package com.aces.learn.java8.streams;
 
 import java.util.List;
+import java.util.Optional;
+
 import com.aces.learn.java8.LearnJava8Utils;
 import com.aces.learn.java8.State;
 
@@ -22,5 +24,14 @@ public class FindAndMatch {
 		
 		System.out.println("--------------------------------Is there a state which doesnt not have exactly 400 counties----------------------------");		
 		System.out.println("Is there a state which doesn not have exactly 400 counties::"+states.stream().noneMatch(s->s.getCounties() == 400));
+		
+		
+		System.out.println("--------------------------------A State on east coast----------------------------");
+		Optional<State> anyEastCoastState = states.stream().filter(State::isEastCoast).findAny();
+		System.out.println(anyEastCoastState);
+		
+		System.out.println("--------------------------------A State on east coast----------------------------");
+		Optional<State> firstEastCoastState = states.stream().filter(State::isEastCoast).findFirst();
+		System.out.println(firstEastCoastState);		
 	}
 }
