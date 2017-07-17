@@ -64,7 +64,7 @@ public class State {
 	 * 
 	 */
 	public String toString(){
-		return "\nState -> {Name:"+this.name+", No Of Counties:"+this.counties+", East Coase:"+this.eastCoast+"}";
+		return "\nState -> {Name:"+this.name+", No Of Counties:"+this.counties+", East Coast:"+this.eastCoast+"}";
 	}
 	/**
 	 * @return the code
