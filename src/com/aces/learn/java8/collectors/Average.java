@@ -17,11 +17,11 @@ import com.aces.learn.java8.State;
 public class Average {
 	public static void main(String... args){	
 		List<State> states = LearnJava8Utils.getAllStates();		
-		System.out.println("--------------------------Avearage Number of Counties 1----------------------");		
+		System.out.println("--------------------------Average Number of Counties 1----------------------");		
 		Double average =  states.stream().collect(averagingInt(s->s.getCounties()));		
-		System.out.println("Avearage Number of Counties::"+average);
+		System.out.println("Average Number of Counties::"+average);
 		
-		System.out.println("--------------------------Avearage Number of Counties 2----------------------");			
-		System.out.println("Avearage Number of Counties::"+states.stream().collect(averagingInt(State::getCounties)));
+		System.out.println("--------------------------Average Number of Counties 2----------------------");			
+		System.out.println("Average Number of Counties::"+states.stream().collect(averagingInt(State::getCounties)));
 	}
 }
