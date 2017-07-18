@@ -3,12 +3,20 @@
  */
 package com.aces.learn.java8.collectors;
 
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.maxBy;
+import static java.util.stream.Collectors.summingInt;
+import static java.util.stream.Collectors.toCollection;
+import static java.util.stream.Collectors.toSet;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
+import java.util.TreeSet;
 
 import com.aces.learn.java8.LearnJava8Utils;
 import com.aces.learn.java8.State;
@@ -83,6 +91,34 @@ public class Grouping {
 		System.out.println("--------------------------Number of Counties by Location----------------------");		
 		Map<State.LOCATION,Integer> numberOfCountiesByLocation = states.stream().collect(groupingBy(State::getLocation, summingInt(State::getCounties)));	
 		numberOfCountiesByLocation.forEach((k,v)->{
+			System.out.println(k);
+			System.out.println(v);
+		});
+		
+		System.out.println("--------------------------Group By Location and Size----------------------");		
+		Map<State.LOCATION, Set<Object>> stateSizePerLocation1 
+				= states.stream().collect(groupingBy(State::getLocation, mapping(s->{
+							int counties = s.getCounties();
+							if(counties>=0 && counties<=100) return StateSize.SMALL;
+							if(counties>100 && counties<=500) return StateSize.MEDIUM;
+							return StateSize.LARGE;
+						}, toSet()
+				)));	
+		stateSizePerLocation1.forEach((k,v)->{
+			System.out.println(k);
+			System.out.println(v);
+		});
+		
+		System.out.println("--------------------------Group By Location and Size-----Sorted-----------------");		
+		Map<State.LOCATION, Set<Object>> stateSizePerLocation2 
+				= states.stream().collect(groupingBy(State::getLocation, mapping(s->{
+							int counties = s.getCounties();
+							if(counties>=0 && counties<=100) return StateSize.SMALL;
+							if(counties>100 && counties<=500) return StateSize.MEDIUM;
+							return StateSize.LARGE;
+						}, toCollection(TreeSet::new)
+				)));	
+		stateSizePerLocation2.forEach((k,v)->{
 			System.out.println(k);
 			System.out.println(v);
 		});
