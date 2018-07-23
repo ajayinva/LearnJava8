@@ -23,17 +23,5 @@ public class CleanString {
       return recursiveMethod(str.substring(1));
     else
       return str.charAt(0) + recursiveMethod(str.substring(1));
-
-   /* if (str.length()==0) return "";
-    String char1 = str.substring(0,1);
-    String remainder = str.substring(1);
-    if (char1.equals(remainder)) return char1;
-    for (int i = 1;i<str.length();i++){
-       if(!char1.equals(str.substring(i,i+1))){
-         remainder = str.substring(i);
-         break;
-       }
-    }
-    return char1 + recursiveMethod(remainder);*/
   }
 }
