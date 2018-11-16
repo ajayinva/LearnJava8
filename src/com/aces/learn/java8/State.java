@@ -10,6 +10,7 @@ public class State {
   private boolean eastCoast;
   private LOCATION location;
   private String test6;
+  private String test7;
   public State(){
 
   }
