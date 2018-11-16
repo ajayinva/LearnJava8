@@ -21,7 +21,7 @@ public class Max {
   public static void main(final String... args){
     final List<State> states = LearnJava8Utils.getAllStates();
 
-    System.out.println("--------------------------MaxBy takes a comparator 1-------1----------------------");
+    System.out.println("--------------------------MaxBy takes a comparator 2-------1----------------------");
     final Comparator<State> comparator1 = new Comparator<State>(){
       @Override
       public int compare(final State o1, final State o2) {
