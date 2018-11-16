@@ -2,8 +2,6 @@ package com.aces.learn.java8;
 
 /**
  * @author aagarwal
- * Local Changes 1
- * Remote Changes1
  */
 public class State {
   private String code;
