@@ -11,6 +11,7 @@ public class State {
   private LOCATION location;
   private String test1;
   private String test2;
+  private String test3;
 
   public State(){
 
