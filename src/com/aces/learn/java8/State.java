@@ -11,6 +11,7 @@ public class State {
   private Integer counties;
   private boolean eastCoast;
   private LOCATION location;
+  private String test;
 
   public State(){
 
