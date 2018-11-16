@@ -9,7 +9,9 @@ public class State {
   private Integer counties;
   private boolean eastCoast;
   private LOCATION location;
-  private String test4;
+  private String test1;
+  private String test2;
+  private String test3;
 
   public State(){
 
