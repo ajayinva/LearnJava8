@@ -9,7 +9,11 @@ public class State {
   private Integer counties;
   private boolean eastCoast;
   private LOCATION location;
+<<<<<<< HEAD
   private String test1;
+=======
+  private String test2;
+>>>>>>> refs/remotes/origin/master
 
   public State(){
 
