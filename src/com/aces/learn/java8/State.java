@@ -8,8 +8,8 @@ public class State {
   private String name;
   private Integer counties;
   private boolean eastCoast;
-  private LOCATION location;  
-  private String test4;
+  private LOCATION location;
+  private String test5;
   public State(){
 
   }
