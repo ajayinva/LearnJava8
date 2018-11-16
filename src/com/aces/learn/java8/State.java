@@ -9,8 +9,6 @@ public class State {
   private Integer counties;
   private boolean eastCoast;
   private LOCATION location;
-  private String test6;
-  private String test7;
   public State(){
 
   }
