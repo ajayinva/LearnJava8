@@ -4,6 +4,7 @@ public class Test {
 
   public static void main(final String[] args) {
     // Remote Changes1
+    // There is a change in the master branch
     System.out.println("Hello World");
   }
 
