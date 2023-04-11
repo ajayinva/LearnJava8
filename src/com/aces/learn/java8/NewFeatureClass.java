@@ -5,4 +5,5 @@ public class NewFeatureClass {
   //This is commit 1 on the feature branch
   //This is commit 2 on the feature branch
   //This is a new feature branch. This is directly edited on github
+  //This is a new commit in feature branch locally. 
 }
